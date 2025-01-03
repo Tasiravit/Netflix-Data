@@ -1,3 +1,18 @@
-SELECT *
-FROM customers
-WHERE country='Mexico';
+src/
+CREATE DATABASE IF NOT EXISTS NF;
+use nf;
+CREATE TABLE `Netflix`(
+`show_id` varchar(500) DEFAULT NULL,
+`type` varchar(255) default NULL,
+`title`varchar(255) default NULL,
+`director` varchar(255) default NULL,
+`country` varchar(255) default NULL,
+`date_added` varchar(255) default NULL,
+`release_year` varchar(255) default NULL,
+`rating` varchar(255) default NULL,
+`duration` varchar(255) DEFAULT NULL,
+`listed_in` varchar(255) DEFAULT NULL);
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/NFi.csv' INTO TABLE Netflix
+FIELDS TERMINATED BY ','
+IGNORE 1 LINES;
